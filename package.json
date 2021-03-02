@@ -1,0 +1,29 @@
+{
+  "name": "wd2-cw1-imamsyedfaisal",
+  "version": "1.0.0",
+  "description": "Coursework 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ospac345/WD2-CW1-ImamSyedFaisal.git"
+  },
+  "keywords": [
+    "cw1",
+    "node.js",
+    "express"
+  ],
+  "author": "Syed Faisal Imam S1828667",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ospac345/WD2-CW1-ImamSyedFaisal/issues"
+  },
+  "homepage": "https://github.com/ospac345/WD2-CW1-ImamSyedFaisal#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "path": "^0.12.7"
+  }
+}
