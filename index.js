@@ -1,20 +1,17 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mustache = require('mustache-express');
 
-const public = path.join(__dirname, ‘public’);
+app.engine('mustache', mustache());
+app.set('view engine', 'mustache');
+
+const public = path.join(__dirname, 'public');
+app.use(express.static(public));
 
 
-app.get('/', function(req, res) {
-    res.send('Hello! Welcome to my application.');
-})
-
-
-
-app.use(function(req, res) {
-    res.status(404);
-    res.send('Oops! We didn\'t find what you are looking for.');
-})
+const router = require('./routes/fitnessAppRoutes');
+app.use('/', router);
 
 
 app.listen(3000, () => {
