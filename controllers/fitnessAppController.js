@@ -1,5 +1,7 @@
+const { response } = require('express');
+
 exports.landing_page = function(req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
+   res.render('loginPage');
 };
 
 exports.about_page = function(req, res) {
