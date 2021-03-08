@@ -7,6 +7,13 @@ router.get("/", controller.landing_page);
 
 router.get("/about", controller.about_page);
 
+router.get("/home", controller.homePage);
+
+router.post("/", controller.authLogin);
+
+router.post("/", controller.addUserToDb);
+
+
 
 
 router.use(function(req, res) {
