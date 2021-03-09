@@ -9,9 +9,17 @@ router.get("/about", controller.about_page);
 
 router.get("/home", controller.homePage);
 
+router.get('/users/:rFName', controller.show_user_entries);
+
+router.get('/users/:rFName/addgoal', controller.add_goal);
+
+router.post('/users/:rFName/addgoal', controller.addActivity);
+
 router.post("/", controller.authLogin);
 
 router.post("/", controller.addUserToDb);
+
+
 
 
 
