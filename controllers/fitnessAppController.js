@@ -50,14 +50,20 @@ exports.authLogin = function(req, res) {
 // if credentials match redirect to user personalised home screen 
 exports.show_user_entries = function(req, res) {
     console.log('filtering author name', req.params.rFName);
-
+    
+    var curr = new Date; // get current date
+    var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+    var last = first + 6; // last day is the first day + 6
+    var firstDay = new Date(curr.setDate(first)).toISOString().split('T')[0];
+    var lastDay = new Date(curr.setDate(last)).toISOString().split('T')[0];
 
     let name = req.params.rFName;
     db.getEntriesByUser(name).then((entries) => {
-
+       
         res.render('homePage', {
-            'heading': entries
-            
+            'heading': entries,
+            'firstDay': firstDay,
+            'lastDay': lastDay
         });
         
     }).catch((err) => {
@@ -78,3 +84,4 @@ exports.addActivity = function(req, res){
     //alert('activity added succefully');
     res.redirect('/users/' + req.params.rFName);
 };
+

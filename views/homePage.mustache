@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/
 css/bootstrap.min.css">
-<link href="css/loginPage.css" type="text/css" rel="stylesheet">
+  <link href="../css/homePage.css" type="text/css" rel="stylesheet">
 </head>
-<body>
-    {{#heading}}
-<div class="text-center">
 
-<h1> Welcome to portal {{rFName}} </h1>
-</div>
+<body class="text-center">
+  {{#heading}}
+  <div class="text-center">
 
-<div class="text-right">
+    <h1> Welcome to portal {{rFName}} </h1>
+  </div>
+  <div id="addbtn" class="text-right" style="margin-right: 30px;">
     <a href="/users/{{rFName}}/addgoal" class="btn btn-primary">
       Add exercise goal
     </a>
   </div>
 
+  <h2 style="color:green">{{firstDay}} to {{lastDay}}</h2>
+  <br>
+  {{#goals}}
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <div id="{{goals.index}}" class="card-body text-left">
+        <h3 class="card-title">{{type}} is at index {{@index}}</h3>
+        <h6 class="card-subtitle mb-2 text-muted">{{date}}</h6>
+        <hr>
+        <a href="" class="card-link">Edit</a>
+        <a href="/remove/{{type}}" class="card-link">Remove</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+  {{/goals}}
+
+  {{^goals}}
+    Sorry no schedule yet :-(.
+    {{/goals}}
+{{/heading}}
+
+{{^heading}}
+    Sorry No data found
     {{/heading}}
 
 
-
-
 </body>
+
 </html>

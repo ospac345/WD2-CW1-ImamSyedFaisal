@@ -54,22 +54,25 @@ getEntriesByUser(rFName) {
                 reject(err);
             } else {
                 resolve(entries);
-                console.log('getEntriesByUser returns: ', entries);
+                //console.log('getEntriesByUser returns: ', entries);
+                entries.forEach(Element => { console.log(Element) });
             }
 }) })
 }
 
 
 addSchedule(date, type){
-
-console.log('hello my GGG');
-var scheduleEntry = {
+    var scheduleEntry = {
     date: date,
     type: type
 }
-console.log('schedule entry added', scheduleEntry);
+console.log('schedule entry adding', scheduleEntry, email);
 
-this.db.update({ rEmail: email }, { $set: {'schedule': scheduleEntry} }, {}, function(err, doc){
+/*  this.db.ensureIndex({fieldName: 'goals.id', unique:true }, function(err) {
+    console.log('error in indexing')
+  });   */
+
+this.db.update({ rEmail: email }, { $push: {goals: scheduleEntry} }, {}, function(err, doc){
     if(err){
         console.log('Error adding Schedule');
     } else {
@@ -77,10 +80,6 @@ this.db.update({ rEmail: email }, { $set: {'schedule': scheduleEntry} }, {}, fun
     }
 })
 }
-
-
-
-
 
 };
 

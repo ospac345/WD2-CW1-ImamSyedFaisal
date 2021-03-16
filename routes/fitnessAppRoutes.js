@@ -15,10 +15,11 @@ router.get('/users/:rFName/addgoal', controller.add_goal);
 
 router.post('/users/:rFName/addgoal', controller.addActivity);
 
-router.post("/", controller.authLogin);
+router.post("/login", controller.authLogin);
 
-router.post("/", controller.addUserToDb);
+router.post("/register", controller.addUserToDb);
 
+//router.get('/remove/:type', controller.removeTest);
 
 
 

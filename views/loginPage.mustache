@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/
 css/bootstrap.min.css">
-<link href="css/loginPage.css" type="text/css" rel="stylesheet">
-    <title>Login/Register</title>
+  <link href="css/loginPage.css" type="text/css" rel="stylesheet">
+  <title>Login/Register</title>
 </head>
+
 <body>
-    
-    <div class="form-signin">
-  <form method="post" role="form">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-    <label for="inputEmail" class="visually-hidden">Email address</label>
-    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="visually-hidden">Password</label>
-    <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <input class="w-100 btn btn-lg btn-primary" name="login" value="Login" type="submit" >
-  </form>
-</div>
 
-<div class="form-signup">
-<form method="post" role="form">
-    <h1 class="h3 mb-3 fw-normal">Register</h1>
-    <label for="rLName" class="visually-hidden">Last name</label>
-    <input type="text" id="rLName" name="rLName" class="form-control" placeholder="Last name" required autofocus>
+  <div class="form-signin">
+    <form method="post" role="form">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <label for="inputEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required
+        autofocus>
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password"
+        required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <input class="w-100 btn btn-lg btn-primary" name="login" value="Login" type="submit" action="/login">
+    </form>
+  </div>
 
-    <label for="rFName" class="visually-hidden">First name</label>
-    <input type="text" id="rFName" name="rFName" class="form-control" placeholder="First Name" required autofocus>
-    <label for="rEmail" class="visually-hidden">Email address</label>
-    <input type="email" id="rEmail" name="rEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="rPassword" class="visually-hidden">Password</label>
-    <input type="password" id="rPassword" name="rPassword" class="form-control" placeholder="Password" required>
-    <br><br>
-    <input class="w-100 btn btn-lg btn-primary" name="register" value="Register" type="submit">
-    
-  </form>
-</div>
+  <div class="form-signup">
+    <form method="post" role="form" action="/register">
+      <h1 class="h3 mb-3 fw-normal">Register</h1>
+      <label for="rLName" class="visually-hidden">Last name</label>
+      <input type="text" id="rLName" name="rLName" class="form-control" placeholder="Last name" required autofocus>
+
+      <label for="rFName" class="visually-hidden">First name</label>
+      <input type="text" id="rFName" name="rFName" class="form-control" placeholder="First Name" required autofocus>
+      <label for="rEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="rEmail" name="rEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="rPassword" class="visually-hidden">Password</label>
+      <input type="password" id="rPassword" name="rPassword" class="form-control" placeholder="Password" required>
+      <br><br>
+      <input class="w-100 btn btn-lg btn-primary" name="register" value="Register" type="submit" >
+
+    </form>
+  </div>
 
 
 
 </body>
+
 </html>
