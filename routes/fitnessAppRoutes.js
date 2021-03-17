@@ -19,7 +19,7 @@ router.post("/login", controller.authLogin);
 
 router.post("/register", controller.addUserToDb);
 
-//router.get('/remove/:type', controller.removeTest);
+router.get("/remove", controller.removeActivity);
 
 
 

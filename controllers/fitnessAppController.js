@@ -85,3 +85,11 @@ exports.addActivity = function(req, res){
     res.redirect('/users/' + req.params.rFName);
 };
 
+
+exports.removeActivity = function(req, res) {
+    console.log('calling remove function from controller');
+
+    db.removeSchedule();
+   // res.redirect('../');
+};
+

@@ -81,6 +81,20 @@ this.db.update({ rEmail: email }, { $push: {goals: scheduleEntry} }, {}, functio
 })
 }
 
+removeSchedule(){
+    console.log('calling removeSchedule from model class');
+this.db.update({ rEmail: 'test@test' }, { $pull: { goals: { type: 'Walking' } } }, {}, function(err, numUp) {
+    if (err) {
+        console.log('error updating documents', err);
+    } else {
+        console.log(numUp, 'document(s) updated');
+    }
+});
+}
+
+
+
+
 };
 
 module.exports = FitnessApp;
