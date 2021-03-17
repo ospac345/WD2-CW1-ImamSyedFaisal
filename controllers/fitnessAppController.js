@@ -25,7 +25,7 @@ exports.addUserToDb = function(req, res){
         return;
     }
     db.addUser(req.body.rLName, req.body.rFName, req.body.rEmail, req.body.rPassword);
-    res.redirect('/home');
+    res.redirect('/users/' + req.body.rFName);
 };
 
 //authorise login credentials
